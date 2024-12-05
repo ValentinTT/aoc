@@ -28,18 +28,18 @@ def main():
     total = 0
     i = 0
     while i < len(corrupted) - 6:
-        if corrupted[i : i + len(DONT)] == DONT: ## Found a don't() skip until do()
+        if corrupted[i : i + len(DONT)] == DONT:  ## Found a don't() skip until do()
             while i < len(corrupted) - len(DO):
                 if corrupted[i : i + 4] == DO:
                     break
-                i += 1 
-            if i >= len(corrupted) - len(DO): ## skip to the end
+                i += 1
+            if i >= len(corrupted) - len(DO):  ## skip to the end
                 break
-        
+
         if corrupted[i : i + len(DO)] != MUL:
             i += 1
             continue
-        
+
         x, i = get_number(i + len(MUL))
         if corrupted[i] != "," or x == -1:
             i += 1

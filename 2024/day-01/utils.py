@@ -1,4 +1,4 @@
-def read_file(): 
+def read_file():
     left_list = []
     right_list = []
 
@@ -7,5 +7,5 @@ def read_file():
             values = line.split()
             left_list.append(int(values[0]))
             right_list.append(int(values[1]))
-    
+
     return left_list, right_list

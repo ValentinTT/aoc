@@ -24,7 +24,7 @@ def main():
 
     total = 0
     for i in range(len(corrupted) - 6):
-        if corrupted[i:i+4] != "mul(":
+        if corrupted[i : i + 4] != "mul(":
             continue
         x, i = get_number(i + 4)
         if corrupted[i] != "," or x == -1:
@@ -38,4 +38,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print(f"result: {main()}") #182619815
+    print(f"result: {main()}")  # 182619815

@@ -1,5 +1,6 @@
 from utils import read_file
-        
+
+
 def main():
     l, r = read_file()
     l.sort()
@@ -10,5 +11,6 @@ def main():
         total += abs(a - b)
     return total
 
+
 if __name__ == "__main__":
-    print(f"total distance {main()}") # 2176849
+    print(f"total distance {main()}")  # 2176849
