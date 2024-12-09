@@ -15,9 +15,6 @@ def main():
                 return False
         return True
 
-    def sort_update(update):
-        pass
-
     res = 0
 
     for update in updates:
