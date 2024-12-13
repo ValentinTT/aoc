@@ -13,9 +13,8 @@ def main(n):
         if (stone, n) in cache:
             return cache[(stone, n)]
         if n == 1:
-            if len(str(stone)) % 2 == 0:
-                return 2
-            return 1
+            return 2 if len(str(stone)) % 2 == 0 else 1
+
         stone_str = str(stone)
         if len(stone_str) % 2 == 0:
             half = len(stone_str) // 2
@@ -23,11 +22,9 @@ def main(n):
             b = stones_from_stone(int(stone_str[half:]), n - 1)
             cache[(stone, n)] = a + b
         elif stone == 0:
-            a = stones_from_stone(1, n - 1)
-            cache[(stone, n)] = a
+            cache[(stone, n)] = stones_from_stone(1, n - 1)
         else:
-            a = stones_from_stone(stone * 2024, n - 1)
-            cache[(stone, n)] = a
+            cache[(stone, n)] = stones_from_stone(stone * 2024, n - 1)
         return cache[(stone, n)]
 
     res = 0
